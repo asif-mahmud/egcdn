@@ -37,3 +37,13 @@ and let a dedicated server handle the rest of it.
 
 The best part of it is the processors are easily customizable. One 
 can write his own pluggable worker and be done with it.
+
+
+## Installation
+
+Download the git repository or any release with a version tag.
+Unzip it and run - `pip install` to install it like any other
+python package.
+
+
+## Version History
