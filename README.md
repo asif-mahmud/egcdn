@@ -25,8 +25,9 @@ This way one can completely decouple file reponse handling from web
 services or web applications and grow up his file extension support
 with optiomization kept in mind.
 
-It is not a CDN server, it just saves the raq data from web application 
-and let a dedicated server handle the rest of it.
+It is not a CDN server, it just saves the raw data from web application 
+and let a dedicated server handle the rest of it. While saving the data
+processors can manipulate, edit or modify them anyway they want.
 
 The best part of it is the processors are easily customizable. One 
 can write his own pluggable worker and be done with it.
