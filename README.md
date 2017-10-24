@@ -19,7 +19,7 @@ his static contents.
 
 Lets see what it does -
 
-<img src="https://github.com/asif-mahmud/egcdn/egcdn/data/Logical-Representation.jpg" alt="Logical presentation" width="512px">
+<img src="https://github.com/asif-mahmud/egcdn/blob/master/egcdn/data/Logical-Representation.jpg" alt="Logical presentation" width="512px">
 
 This way one can completely decouple file reponse handling from web
 services or web applications and grow up his file extension support
