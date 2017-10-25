@@ -16,8 +16,8 @@ def spawn_worker(_id, url, data_exchange, data_queue, response_exchange):
                             data_queue, response_exchange)
         worker.start()
     except Exception as err:
-        logging.getLogger(__name__).error(err)
-        return
+        logging.getLogger(__name__).exception(err)
+        raise
 
 
 def main():
