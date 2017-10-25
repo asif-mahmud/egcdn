@@ -1,6 +1,8 @@
 import setuptools
 import os
 
+from egcdn import __version__
+
 BASE_DIR = os.path.dirname(__file__)
 
 REQ_FILE_PATH = os.path.join(BASE_DIR, 'requirements.txt')
@@ -8,7 +10,7 @@ README_FILE_PATH = os.path.join(BASE_DIR, 'README.md')
 
 # configure application specifics
 APP_NAME = 'egcdn'
-APP_VERSION = '0.0.1'
+APP_VERSION = __version__
 AUTHOR = 'Asif Mahmud Shimon'
 AUTHOR_EMAIL = 'shimon@embeddedgamers.com'
 APP_URL = 'https://www.embeddedgamers.com'
