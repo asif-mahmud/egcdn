@@ -54,6 +54,14 @@ class Configurator(object):
             help='Queue name for the queue used by worker processes.'
         )
         self._config_parser.add_argument(
+            '-C', '--worker-class', type=str, default='BasicWorker',
+            help='Worker class name to be started as seperate process.'
+        )
+        self._config_parser.add_argument(
+            '-K', '--prefered-package', type=str, default='filesystem',
+            help='Name of the preferable package for loading the processors under pluggables package.'
+        )
+        self._config_parser.add_argument(
             '-V', '--verbosity', type=int, default=2, choices=[0, 1, 2, 3], help='Log level. The larger the value, the more log messages will be printed out.'
         )
         self._config_parser.add_argument(
@@ -79,7 +87,7 @@ class Configurator(object):
         logging.basicConfig(
             level=log_level,
             stream=sys.stderr,
-            format='[%(asctime)s] [%(levelname)-8s] [egcdn:%(threadName)s:%(name)s] %(message)s'
+            format='[%(asctime)s] [%(levelname)-8s] [%(name)s] %(message)s'
         )
 
     @property

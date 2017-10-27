@@ -6,14 +6,16 @@ import logging
 import kombu
 
 from .config import Configurator
-from .server import BasicWorker
+from . import workers
 
 
-def spawn_worker(_id, url, data_exchange, data_queue, response_exchange):
+def spawn_worker(_id, url, data_exchange, data_queue,
+                 response_exchange, worker_cls, prefered_pkg):
     """Spawn a worker process."""
     try:
-        worker = BasicWorker(_id, url, data_exchange,
-                            data_queue, response_exchange)
+        WorkerClass = getattr(workers, worker_cls)
+        worker = WorkerClass(_id, url, data_exchange,
+                             data_queue, response_exchange, prefered_pkg)
         worker.start()
     except Exception as err:
         logging.getLogger(__name__).exception(err)
@@ -60,6 +62,8 @@ def main():
                 client_data_exchange,
                 server_queue,
                 server_response_exchange,
+                configurator.config.worker_class,
+                configurator.config.prefered_package,
             )
 
         def signal_handler(signum, frame):
