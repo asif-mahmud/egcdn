@@ -93,8 +93,7 @@ class BasicWorker(mixins.ConsumerProducerMixin):
 
         :return The processor class or `None`
         """
-        ProcCls = None
-        return ProcCls
+        pass
 
     def send_response(self, response, correlation_id):
         """Send the response to the client."""
